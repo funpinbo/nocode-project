@@ -7,7 +7,7 @@
 #   httpx2 2.16.0 으로 바꾸면 테스트 클라이언트 요청이 "httpx2" 로거 INFO 로 찍혀 tests/ops/test_logging_config.py 가
 #   실패한다(logging_config 는 "httpx" 로거만 WARNING 으로 낮춤). ops 가 "httpx2" 로거를 낮춘 뒤 httpx2 로 교체한다(STM §5).
 #   httpx 0.28.1(2024-12)·httpcore 1.0.9(2025-04) 는 02 §9 "1년 내 릴리스" 밖 — dev 전용 임시 수용.
-# pip-audit 는 여기에 넣지 않는다(전이 의존성이 많고 일부가 오래됨) — 릴리스 전 별도 임시 venv 에서 실행(절차: workspace/project/release/release.md, P1 말 Task).
+# pip-audit 는 여기에 넣지 않는다(전이 의존성이 많고 일부가 오래됨) — 릴리스 전 별도 임시 venv 에서 실행(절차: workspace-exam/project/release/release.md, P1 말 Task).
 -r requirements.txt
 
 # 테스트

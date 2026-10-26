@@ -70,6 +70,7 @@ aidlc/
 docs/aidlc/                      프레임워크 사용 설명서 (+ examples/ 생성 예시)
 docs/api, docs/guide             ← /aidlc-docs 가 생성하는 프로젝트 문서
 workspace/                       ← /aidlc-init 이 생성하는 실제 프로젝트 인스턴스
+workspace-exam/                  완성된 예시 (AI-DLC 로 만든 AI-DLC Monitor 의 전 산출물, 읽기 전용 — Hook 대상 아님)
 ```
 
 ## 팀 카탈로그

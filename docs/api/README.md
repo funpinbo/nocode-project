@@ -2,13 +2,13 @@
 doc: api-overview
 layer: docs
 author: team-product (docs 팀 없음 — /aidlc-docs 오케스트레이터 지시)
-spec: workspace/project/contracts/openapi.json
+spec: workspace-exam/project/contracts/openapi.json
 api_version: 0.1.0
 ---
 # AI-DLC Monitor API — API 가이드
 
 > 이 문서는 **사람이 읽는 개요**입니다. 엔드포인트별 상세는 자동 생성되는 [레퍼런스](./reference.md)를 보세요.
-> 근거: OpenAPI 명세(`workspace/project/contracts/openapi.json`), user/02 §6 API 규칙, LTM 결정 사항, SSE 계약(`workspace/project/contracts/sse-events.md`), 실서버 호출 확인(2026-10-26).
+> 근거: OpenAPI 명세(`workspace-exam/project/contracts/openapi.json`), user/02 §6 API 규칙, LTM 결정 사항, SSE 계약(`workspace-exam/project/contracts/sse-events.md`), 실서버 호출 확인(2026-10-26).
 
 이 API 는 대시보드 화면이 쓰는 **내 PC 전용** API 입니다. 인증이 없고 `127.0.0.1` 에서만 열립니다. 조회(GET) 8개 + 변경 요청(POST) 2개 + 알림 스트림(SSE) 1개, 총 11개 엔드포인트입니다.
 
@@ -104,8 +104,8 @@ curl -s http://127.0.0.1:8765/api/v1/health
 | `FORBIDDEN_ORIGIN` | 403 | 변경 요청의 Origin 불일치·Content-Type 이 JSON 아님, 또는 SSE 의 출처 불일치 | 같은 출처에서 `application/json` 으로 요청 |
 | `NO_ACTIVE_LOOP` | 409 | 활성 루프(running/paused)가 없을 때 `pause` | `/aidlc-run` 으로 루프를 먼저 시작. 재시도 무의미 |
 | `TOO_MANY_STREAMS` | 503 | SSE 동시 연결 8개 초과 | 5초 폴링으로 대체(화면이 자동으로 함), 다른 탭 닫기 |
-| `CONTROL_WRITE_FAILED` | 500 | `.control.json` 쓰기 실패·락 대기 2초 초과·seq 상한. 기존 파일은 보존됨 | 잠시 뒤 재시도, 계속되면 파일 권한 확인 ([pause 런북](../../workspace/project/ops/runbooks/pause-not-releasing.md)) |
-| `INTERNAL_ERROR` | 500 | 예상 못 한 서버 오류 | 콘솔 로그 확인 ([server 런북](../../workspace/project/ops/runbooks/server-wont-start.md)) |
+| `CONTROL_WRITE_FAILED` | 500 | `.control.json` 쓰기 실패·락 대기 2초 초과·seq 상한. 기존 파일은 보존됨 | 잠시 뒤 재시도, 계속되면 파일 권한 확인 ([pause 런북](../../workspace-exam/project/ops/runbooks/pause-not-releasing.md)) |
+| `INTERNAL_ERROR` | 500 | 예상 못 한 서버 오류 | 콘솔 로그 확인 ([server 런북](../../workspace-exam/project/ops/runbooks/server-wont-start.md)) |
 
 별개로 패널 응답의 `meta.error.code` 는 **HTTP 에러가 아닌 소스 문제 코드**입니다: `SOURCE_MISSING`, `SOURCE_PARSE_ERROR`, `SOURCE_UNREADABLE`, `GATE_TIMEOUT`, `PROJECT_DIR_NOT_FOUND`, `SNAPSHOT_STALE`. 이 경우 HTTP 는 200 입니다.
 
@@ -147,7 +147,7 @@ curl -s http://127.0.0.1:8765/api/v1/health
 - 동시 연결 상한 8. 초과 시 스트림 대신 503 `TOO_MANY_STREAMS` JSON. 허용 메서드는 GET 하나.
 - 페이로드에 파일 경로·파일 내용을 담지 않습니다.
 - 실서버 확인: 연결 직후 `retry: 5000` 다음 `event: ready` / `data: {"at":"..."}` 프레임이 왔습니다.
-- 이벤트 형식의 기준 문서: `workspace/project/contracts/sse-events.md`.
+- 이벤트 형식의 기준 문서: `workspace-exam/project/contracts/sse-events.md`.
 - 웹훅: 없음.
 
 ## 12. 명세·표준 대조 결과

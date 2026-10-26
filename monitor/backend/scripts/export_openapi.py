@@ -1,9 +1,9 @@
-"""FastAPI 명세를 `workspace/project/contracts/openapi.json` 으로 내보낸다 (ADR-011 §7, 20 §5 F10).
+"""FastAPI 명세를 `workspace-exam/project/contracts/openapi.json` 으로 내보낸다 (ADR-011 §7, 20 §5 F10).
 
   python monitor/backend/scripts/export_openapi.py [--check]
 
 손편집 금지. 명세가 바뀌면 같은 Task 안에서
-`python3 aidlc/scripts/openapi_docs.py render workspace/project/contracts/openapi.json -o docs/api`
+`python3 aidlc/scripts/openapi_docs.py render workspace-exam/project/contracts/openapi.json -o docs/api`
 로 레퍼런스를 다시 만든다. `--check` 는 파일이 최신이 아니면 exit 1 (쓰지 않음).
 """
 
@@ -15,7 +15,7 @@ from pathlib import Path
 
 BACKEND = Path(__file__).resolve().parents[1]
 REPO = BACKEND.parents[1]
-OUT = REPO / "workspace" / "project" / "contracts" / "openapi.json"
+OUT = REPO / "workspace-exam" / "project" / "contracts" / "openapi.json"
 
 if str(BACKEND) not in sys.path:
     sys.path.insert(0, str(BACKEND))

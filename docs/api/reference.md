@@ -1,6 +1,6 @@
 # AI-DLC Monitor API — REST API 레퍼런스
 
-> `workspace/project/contracts/openapi.json` 에서 자동 생성됨 (`python3 aidlc/scripts/openapi_docs.py render`). 직접 수정하지 말고 명세를 고친 뒤 다시 생성하세요.
+> `workspace-exam/project/contracts/openapi.json` 에서 자동 생성됨 (`python3 aidlc/scripts/openapi_docs.py render`). 직접 수정하지 말고 명세를 고친 뒤 다시 생성하세요.
 
 | 항목 | 값 |
 |---|---|

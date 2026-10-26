@@ -31,7 +31,7 @@ AI-DLC 저장소의 진행 상태(파이프라인 단계, Task, 메모리, Claud
 3. 서버가 `http://127.0.0.1:8765/` 에서 뜨면 기본 브라우저가 열립니다. 8765 를 다른 프로그램이 쓰고 있으면 다음 빈 포트로 시작하고 콘솔에 실제 주소를 출력합니다. 이미 대시보드가 떠 있으면 서버를 새로 띄우지 않고 브라우저만 엽니다.
 4. 끝내려면 실행한 콘솔에서 `Ctrl+C` 를 누릅니다.
 
-> 측정 참고: 아직 사람이 직접 잰 정식 설치 리허설(KPI-02)은 하지 않았습니다. Linux 컨테이너에서 잰 참고값은 [UAT 체크리스트 §6.7](../workspace/project/uat/uat-checklist.md) 에 있습니다. 첫 실행이 "5분 이내" 라는 목표의 사람 측정 결과는 **미검증**입니다.
+> 측정 참고: 아직 사람이 직접 잰 정식 설치 리허설(KPI-02)은 하지 않았습니다. Linux 컨테이너에서 잰 참고값은 [UAT 체크리스트 §6.7](../workspace-exam/project/uat/uat-checklist.md) 에 있습니다. 첫 실행이 "5분 이내" 라는 목표의 사람 측정 결과는 **미검증**입니다.
 
 ## 2. 첫 화면 읽는 법
 
@@ -80,13 +80,13 @@ AI-DLC 저장소의 진행 상태(파이프라인 단계, Task, 메모리, Claud
 
 | 증상 | 안내 |
 |------|------|
-| 서버가 시작되지 않음 ("서버가 시작되지 않았습니다") | [server-wont-start](../workspace/project/ops/runbooks/server-wont-start.md) |
-| 포트가 이미 사용 중 / 다른 앱이 열림 | [port-in-use](../workspace/project/ops/runbooks/port-in-use.md) |
-| 5시간 한도 %가 안 나옴 | [statusline-not-running](../workspace/project/ops/runbooks/statusline-not-running.md) |
-| 일시정지가 풀리지 않음 / `세션 없음` | [pause-not-releasing](../workspace/project/ops/runbooks/pause-not-releasing.md) |
-| 사용량 집계가 오래 걸림 | [warmup-slow](../workspace/project/ops/runbooks/warmup-slow.md) |
+| 서버가 시작되지 않음 ("서버가 시작되지 않았습니다") | [server-wont-start](../workspace-exam/project/ops/runbooks/server-wont-start.md) |
+| 포트가 이미 사용 중 / 다른 앱이 열림 | [port-in-use](../workspace-exam/project/ops/runbooks/port-in-use.md) |
+| 5시간 한도 %가 안 나옴 | [statusline-not-running](../workspace-exam/project/ops/runbooks/statusline-not-running.md) |
+| 일시정지가 풀리지 않음 / `세션 없음` | [pause-not-releasing](../workspace-exam/project/ops/runbooks/pause-not-releasing.md) |
+| 사용량 집계가 오래 걸림 | [warmup-slow](../workspace-exam/project/ops/runbooks/warmup-slow.md) |
 
-서버가 살아 있는지 빠르게 보려면 `curl -s http://127.0.0.1:8765/api/v1/health` (응답에 `"app":"aidlc-monitor"` 가 있으면 대시보드입니다). 로그 형식과 금지 항목은 [logging.md](../workspace/project/ops/logging.md) 를 보세요.
+서버가 살아 있는지 빠르게 보려면 `curl -s http://127.0.0.1:8765/api/v1/health` (응답에 `"app":"aidlc-monitor"` 가 있으면 대시보드입니다). 로그 형식과 금지 항목은 [logging.md](../workspace-exam/project/ops/logging.md) 를 보세요.
 
 ## 5. 보안 약속
 
