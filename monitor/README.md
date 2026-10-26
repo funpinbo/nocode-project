@@ -55,7 +55,7 @@ AI-DLC 저장소의 진행 상태(파이프라인 단계, Task, 메모리, Claud
 - `⟳` — 모두 다시 읽기.
 
 참고할 점:
-- 5시간 한도는 Claude Code 의 status line 신호가 있어야 표시됩니다. 이 저장소는 `.claude/settings.json` 에 status line 이 등록되어 있고, Claude Code 세션에서 첫 응답을 받은 뒤부터 값이 생깁니다. 구독이 아니거나(API 키) 신호가 없으면 `한도 정보 없음` 안내가 나오고, 토큰 집계는 계속 표시됩니다. 실제 세션에서의 동작은 **미검증**입니다(UAT 미실행).
+- **5시간 한도 %와 세션 비용은 Claude CLI(터미널에서 `claude` 실행)로 쓸 때만 표시됩니다.** VS Code 채팅 패널에서는 status line 이 실행되지 않아 한도 %가 나오지 않았습니다(실사용 확인). 한도를 보려면 이 저장소 폴더에서 터미널을 열어 `claude` 로 대화하세요. 이 저장소는 `.claude/settings.json` 에 status line 이 등록되어 있고(새 세션에서 프로젝트 설정 신뢰를 수락해야 적용), CLI 세션에서 첫 응답을 받은 뒤부터 값이 생깁니다. 구독이 아니거나(API 키) 신호가 없으면 `한도 정보 없음` 안내가 나옵니다. **토큰 집계(시간대별·모델별 그래프)는 status line 과 무관하게 계속 표시됩니다**(`~/.claude/projects/` 기록 기준). Windows 에서의 동작은 **미검증**입니다(UAT 미실행).
 - 맨 위에 경고 줄(⚠)이 보이면 미처리 메모리 cascade, 막힌 Task, 한도 80% 이상 중 하나입니다.
 - 일부 데이터 파일이 없거나 깨져도 화면은 뜨고, 해당 패널에만 안내가 나옵니다.
 
@@ -82,7 +82,7 @@ AI-DLC 저장소의 진행 상태(파이프라인 단계, Task, 메모리, Claud
 |------|------|
 | 서버가 시작되지 않음 ("서버가 시작되지 않았습니다") | [server-wont-start](../workspace-exam/project/ops/runbooks/server-wont-start.md) |
 | 포트가 이미 사용 중 / 다른 앱이 열림 | [port-in-use](../workspace-exam/project/ops/runbooks/port-in-use.md) |
-| 5시간 한도 %가 안 나옴 | [statusline-not-running](../workspace-exam/project/ops/runbooks/statusline-not-running.md) |
+| 5시간 한도 %가 안 나옴 (VS Code 패널에서 사용 중) | **Claude CLI(터미널 `claude`)로 실행**하세요. 패널에서는 status line 이 실행되지 않습니다. 그래도 안 나오면 [statusline-not-running](../workspace-exam/project/ops/runbooks/statusline-not-running.md) |
 | 일시정지가 풀리지 않음 / `세션 없음` | [pause-not-releasing](../workspace-exam/project/ops/runbooks/pause-not-releasing.md) |
 | 사용량 집계가 오래 걸림 | [warmup-slow](../workspace-exam/project/ops/runbooks/warmup-slow.md) |
 

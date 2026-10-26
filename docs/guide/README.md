@@ -118,7 +118,7 @@ AI-DLC Monitor 는 지금 AI-DLC 가 몇 단계인지, 어떤 Task 를 어느 �
 | `Python 3.11 이상이 필요합니다` | Python 이 없거나 낮음(Windows 는 Store 별칭만 있는 경우 포함) | https://www.python.org/downloads/ 에서 3.11 이상 설치 (Windows 는 "Add python.exe to PATH" 체크) |
 | "서버가 시작되지 않았습니다" | 20초 안에 서버가 응답하지 않음 | [서버가 안 뜸](../../workspace-exam/project/ops/runbooks/server-wont-start.md) |
 | 포트 사용 중 / 다른 앱이 열림 | 8765 를 다른 프로그램이 사용 | [포트 사용 중](../../workspace-exam/project/ops/runbooks/port-in-use.md) |
-| `한도 정보 없음` | status line 신호 없음(첫 응답 전, 비구독, 미실행) | [statusLine 미실행](../../workspace-exam/project/ops/runbooks/statusline-not-running.md) |
+| `한도 정보 없음` | status line 신호 없음(**VS Code 채팅 패널 사용 중 — Claude CLI 로 실행해야 함**, 첫 응답 전, 비구독, 미실행) | [statusLine 미실행](../../workspace-exam/project/ops/runbooks/statusline-not-running.md) |
 | `일시정지됨` 이 풀리지 않음 / `세션 없음` | 재개 요청이 반영되지 않았거나 세션이 사라짐 | [일시정지가 안 풀림](../../workspace-exam/project/ops/runbooks/pause-not-releasing.md) |
 | 사용량 집계가 오래 걸림 | 첫 실행 시 최근 30일 기록을 읽는 중 | [집계가 느림](../../workspace-exam/project/ops/runbooks/warmup-slow.md) |
 | 패널 하나만 "읽을 수 없음" | 해당 소스 파일이 깨짐(다른 패널은 정상) | 해당 파일(`tasks.md`, `short-term.md` 등)의 형식 확인 |
