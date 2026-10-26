@@ -72,7 +72,7 @@ def check_api_reference(py: str) -> Result:
     name = "API 레퍼런스 신선도"
     print(f"\n=== {name}", flush=True)
     start = time.monotonic()
-    spec = REPO / "workspace" / "project" / "contracts" / "openapi.json"
+    spec = REPO / "workspace-exam" / "project" / "contracts" / "openapi.json"
     current = REPO / "docs" / "api" / "reference.md"
     if not spec.is_file():
         return Result(name, "SKIP", "openapi.json 없음", 0.0)

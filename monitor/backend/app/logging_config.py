@@ -1,6 +1,6 @@
 """콘솔 로그 설정 `setup_logging()` (02 §7, 20 §6, ops 소유).
 
-규칙 (문구 규칙 상세: `workspace/project/ops/logging.md`):
+규칙 (문구 규칙 상세: `workspace-exam/project/ops/logging.md`):
 - 포맷 `%(asctime)s %(levelname)s %(message)s`, stderr 한 줄. ERROR = 패널을 못 그림,
   WARNING = 파일 누락·형식 오류(파일 종류·건수만), INFO = 시작·소스 해석 결과(찾음/못 찾음).
 - 대화 본문·파일 경로·sessionId/requestId·토큰을 남기지 않는다. 호출하는 쪽이 지키는 것이 1차 방어이고,

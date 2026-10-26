@@ -5,7 +5,7 @@ author: team-product (docs 팀 없음 — /aidlc-docs 오케스트레이터 지�
 ---
 # AI-DLC Monitor 사용자 가이드
 
-> 대상: VSCode 에서 Claude Code 로 `/aidlc-run` 을 돌리는 AI-DLC 운영자(user/01 §4). 근거: user/01, `workspace/project/stories/`, 실제 구현(화면 코드·API 실행 확인). **구현되지 않은 기능은 쓰지 않았습니다.** 아래 중 "미검증" 이라고 적은 부분은 사람이 실제 PC 에서 확인하기 전입니다.
+> 대상: VSCode 에서 Claude Code 로 `/aidlc-run` 을 돌리는 AI-DLC 운영자(user/01 §4). 근거: user/01, `workspace-exam/project/stories/`, 실제 구현(화면 코드·API 실행 확인). **구현되지 않은 기능은 쓰지 않았습니다.** 아래 중 "미검증" 이라고 적은 부분은 사람이 실제 PC 에서 확인하기 전입니다.
 
 ## 1. 소개
 AI-DLC Monitor 는 지금 AI-DLC 가 몇 단계인지, 어떤 Task 를 어느 팀이 하고 있는지, Claude 5시간 사용 한도를 얼마나 썼는지를 브라우저 한 화면에서 보여 줍니다. 실행 중인 `/aidlc-run` 루프를 현재 Task 가 끝난 뒤 멈췄다가 다시 이어 가는 일시정지/재개도 할 수 있습니다. 내 PC 에서만 동작하고(`127.0.0.1`), 로그인은 없습니다.
@@ -116,11 +116,11 @@ AI-DLC Monitor 는 지금 AI-DLC 가 몇 단계인지, 어떤 Task 를 어느 �
 | 증상 | 원인 | 해결 |
 |------|------|------|
 | `Python 3.11 이상이 필요합니다` | Python 이 없거나 낮음(Windows 는 Store 별칭만 있는 경우 포함) | https://www.python.org/downloads/ 에서 3.11 이상 설치 (Windows 는 "Add python.exe to PATH" 체크) |
-| "서버가 시작되지 않았습니다" | 20초 안에 서버가 응답하지 않음 | [서버가 안 뜸](../../workspace/project/ops/runbooks/server-wont-start.md) |
-| 포트 사용 중 / 다른 앱이 열림 | 8765 를 다른 프로그램이 사용 | [포트 사용 중](../../workspace/project/ops/runbooks/port-in-use.md) |
-| `한도 정보 없음` | status line 신호 없음(첫 응답 전, 비구독, 미실행) | [statusLine 미실행](../../workspace/project/ops/runbooks/statusline-not-running.md) |
-| `일시정지됨` 이 풀리지 않음 / `세션 없음` | 재개 요청이 반영되지 않았거나 세션이 사라짐 | [일시정지가 안 풀림](../../workspace/project/ops/runbooks/pause-not-releasing.md) |
-| 사용량 집계가 오래 걸림 | 첫 실행 시 최근 30일 기록을 읽는 중 | [집계가 느림](../../workspace/project/ops/runbooks/warmup-slow.md) |
+| "서버가 시작되지 않았습니다" | 20초 안에 서버가 응답하지 않음 | [서버가 안 뜸](../../workspace-exam/project/ops/runbooks/server-wont-start.md) |
+| 포트 사용 중 / 다른 앱이 열림 | 8765 를 다른 프로그램이 사용 | [포트 사용 중](../../workspace-exam/project/ops/runbooks/port-in-use.md) |
+| `한도 정보 없음` | status line 신호 없음(첫 응답 전, 비구독, 미실행) | [statusLine 미실행](../../workspace-exam/project/ops/runbooks/statusline-not-running.md) |
+| `일시정지됨` 이 풀리지 않음 / `세션 없음` | 재개 요청이 반영되지 않았거나 세션이 사라짐 | [일시정지가 안 풀림](../../workspace-exam/project/ops/runbooks/pause-not-releasing.md) |
+| 사용량 집계가 오래 걸림 | 첫 실행 시 최근 30일 기록을 읽는 중 | [집계가 느림](../../workspace-exam/project/ops/runbooks/warmup-slow.md) |
 | 패널 하나만 "읽을 수 없음" | 해당 소스 파일이 깨짐(다른 패널은 정상) | 해당 파일(`tasks.md`, `short-term.md` 등)의 형식 확인 |
 
 ## 6. 용어

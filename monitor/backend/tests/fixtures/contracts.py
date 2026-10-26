@@ -1,4 +1,4 @@
-"""계약 스키마 로더 (workspace/project/contracts/*.schema.json).
+"""계약 스키마 로더 (workspace-exam/project/contracts/*.schema.json).
 
 스키마의 `format`(date-time)은 비강제이므로 `pattern` 으로만 검증한다 (LTM 패턴).
 음성 케이스도 이 검증기로 실제 실행해서 스키마가 잡는지 확인한다.
@@ -13,7 +13,7 @@ from pathlib import Path
 from jsonschema import Draft202012Validator
 
 REPO_ROOT = Path(__file__).resolve().parents[4]
-CONTRACTS_DIR = REPO_ROOT / "workspace" / "project" / "contracts"
+CONTRACTS_DIR = REPO_ROOT / "workspace-exam" / "project" / "contracts"
 
 SCHEMA_NAMES = ("control", "loop-status", "claude-status")
 

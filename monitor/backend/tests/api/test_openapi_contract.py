@@ -1,4 +1,4 @@
-"""OpenAPI 명세 동기화 (ADR-011 §7, 02 §6) — `workspace/project/contracts/openapi.json` 은 export 로만."""
+"""OpenAPI 명세 동기화 (ADR-011 §7, 02 §6) — `workspace-exam/project/contracts/openapi.json` 은 export 로만."""
 
 from __future__ import annotations
 
@@ -7,7 +7,7 @@ import json
 
 from backend_support import BACKEND_DIR, REPO_ROOT
 
-SPEC_PATH = REPO_ROOT / "workspace" / "project" / "contracts" / "openapi.json"
+SPEC_PATH = REPO_ROOT / "workspace-exam" / "project" / "contracts" / "openapi.json"
 
 
 def _export_module():

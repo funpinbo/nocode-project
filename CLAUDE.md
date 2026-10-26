@@ -10,6 +10,8 @@
 | Team | `workspace/teams/<id>/`, `.claude/agents/team-<id>.md` | team-architect | 팀 charter, 팀 실행 Agent (카탈로그: `aidlc/teams/catalog.json`) |
 | Memory | `workspace/memory/` | 오케스트레이터 + Hook | Plan > Tasks > Long-term > Short-term |
 
+> `workspace-exam/` 은 완료된 예시(AI-DLC Monitor)를 보관한 폴더다. Hook·`aidlc.py` 의 대상이 아니므로 수정하지 않는다. 프레임워크는 `workspace/` 만 쓴다.
+
 규칙 우선순위: user/02 개발 표준 > user/03 아키텍처 철학 > project 분석서 > team charter > LTM.
 
 ## 파이프라인
